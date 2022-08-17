@@ -1,0 +1,115 @@
+
+
+.player {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  padding: 0;
+
+  .info {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+
+    img {
+      height: 40px;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .text {
+      height: 40px;
+      margin-left: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .name {
+        font-weight: 500;
+        height: 20px;
+        line-height: 20px;
+        font-size: 15px;
+        cursor: pointer;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        word-break: break-all;
+      }
+
+      .artist {
+        height: 20px;
+        line-height: 20px;
+        font-size: 13px;
+        font-weight: 400;
+        opacity: 0.8;
+        cursor: pointer;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        word-break: break-all;
+      }
+    }
+  }
+
+  .control {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+      :hover {
+        cursor: pointer;
+      }
+
+      .i-icon {
+        display: flex;
+      }
+    }
+
+    .play-pause {
+      margin: 0 10px;
+    }
+  }
+
+  .progress {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .time {
+      color: white;
+      flex: 1;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .progress-slider {
+      flex: 10;
+    }
+  }
+
+  .other {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+      margin: 0 10px;
+
+      :hover {
+        cursor: pointer;
+      }
+
+      .i-icon {
+        display: flex;
+      }
+    }
+  }
+}
