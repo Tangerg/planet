@@ -2,7 +2,7 @@ import Options from "./options";
 import IEventEmitter from "../event/types";
 import EventMap from "./events";
 import {IDisposeable, IIDable} from "../types";
-import ILogger from "../logger";
+import {ILogger} from "../logger";
 
 export interface IContext {
     get options(): Options;
