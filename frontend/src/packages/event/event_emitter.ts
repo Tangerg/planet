@@ -1,5 +1,5 @@
 import {IEventEmitter, IEventListener, IEventMap} from "./types";
-import {createOnceFunction} from "../function";
+import {createOnceFunction} from "../shared";
 
 type EventListener = {
     fn: Function

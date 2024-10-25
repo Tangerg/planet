@@ -1,4 +1,4 @@
-import {Duration} from "../time/duration";
+import {Duration} from "./time";
 import {Lyric} from "../schema/lyric";
 
 /**  lyricDurationReg
@@ -8,7 +8,7 @@ import {Lyric} from "../schema/lyric";
  * */
 const lyricDurationReg = /\[(\d{2,}):(\d{2})(?:[.:](\d{1,3}))?]/;
 
-const units = [Duration.Hour, Duration.Minute, Duration.Second];
+const lyricDurationUnits = [Duration.Minute, Duration.Second];
 
 
 function parseDuration(minStr: string, secStr: string, msStr?: string): Duration {
@@ -24,7 +24,7 @@ function parseDuration(minStr: string, secStr: string, msStr?: string): Duration
 
 function formatDuration(d: Duration): string {
     let duration = d.milliseconds
-    return units.map(uint => {
+    return lyricDurationUnits.map(uint => {
         const time = Math.floor(duration / uint.milliseconds).toString().padStart(2, "0")
         duration %= uint.milliseconds
         return time

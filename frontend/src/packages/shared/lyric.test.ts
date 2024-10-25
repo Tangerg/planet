@@ -1,4 +1,4 @@
-import {parseLyrics} from "./index"
+import {parseLyrics} from "./lyric"
 // import {test} from "bun:test";
 import {test} from "vitest";
 

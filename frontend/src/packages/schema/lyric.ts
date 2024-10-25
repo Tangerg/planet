@@ -1,4 +1,4 @@
-import {Duration} from "../time";
+import {Duration} from "../shared";
 
 export type Lyric = {
     content: string
