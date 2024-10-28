@@ -1,5 +1,3 @@
-interface Options {
+export interface Options {
     [key: string]: Readonly<any>;
 }
-
-export default Options

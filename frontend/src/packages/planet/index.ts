@@ -1,20 +1,27 @@
 import {IContext, IPlanet, IPlugin} from "../core/types";
-import {ILogger} from "../logger";
-import Options from "../core/options";
+import {Manager} from "../plugins/manager";
 
 export type PlanetOption = {
-    options: Options;
-    logger: ILogger;
     context: IContext;
     plugins: IPlugin[];
 }
 
 
-class Planet implements IPlanet {
+export class Planet implements IPlanet {
     private readonly _context: IContext
+    private readonly pluginManager: Manager
 
     constructor(opt: PlanetOption) {
         this._context = opt.context;
+        this.pluginManager = new Manager()
+        this.pluginManager.beforeInstall()
+        this.pluginManager.install(this._context)
+        this.pluginManager.afterInstall()
+        this.installPlugins(opt.plugins)
+    }
+
+    private installPlugins(plugins: IPlugin[]): void {
+        this.pluginManager.apply(plugins)
     }
 
     get context(): IContext {

@@ -48,7 +48,7 @@ export class EventEmitter<E extends IEventMap> implements IEventEmitter<E> {
         return this
     }
 
-    emit<K extends keyof E>(name: K, arg: E[K]): void {
+    emit<K extends keyof E>(name: K, arg?: E[K]): void {
         if (!this.register.has(name)) {
             return
         }

@@ -1,7 +1,5 @@
 import {IEventMap} from "../event/types";
 
-interface EventMap extends IEventMap {
+export interface EventMap extends IEventMap {
 
 }
-
-export default EventMap;

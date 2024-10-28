@@ -18,7 +18,7 @@ export abstract class Plugin implements IPlugin {
 
     install(ctx: IContext): void {
         if (this.installed) {
-            ctx.logger.warning(`the plugin ${this.id} should be install only once`)
+            ctx.logger.warn(`the plugin ${this.id} should be install only once`)
             return
         }
         this._context = ctx
