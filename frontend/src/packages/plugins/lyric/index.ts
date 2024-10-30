@@ -48,7 +48,7 @@ export class Lyric extends Plugin {
     }
 
     private get sleepDuration(): Duration {
-        const lyric = this.lyricIterator.current as LyricSchema
+        const lyric = this.lyricIterator.current
         if (!lyric) {
             return Duration.fromMilliseconds(0)
         }
